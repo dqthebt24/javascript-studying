@@ -23,7 +23,9 @@ Two compare operator `==` for value comparing and `===` value and data type comp
 	> A function can be object's property
 	>
 	> Read more at [here](https://dmitripavlutin.com/access-object-properties-javascript/)
-
+	>
+	> Use `this` operator to regist or access object properties
+ 
 - Data type examples <a name="datatype-examples">: Try with some javascript codes bellow
     ```js
     //////// Basic types
@@ -69,7 +71,7 @@ Two compare operator `==` for value comparing and `===` value and data type comp
 - There are two scope that a variable can be: global and local
 - Variables are defined outside functions are global scope. Variables are defined inside functions are local scope
 
-Example 1: Context inside context
+**Example 1**: Context inside context
 ```js
 var comeFrom = 'The earth'
 var introduce = function() {
@@ -87,6 +89,70 @@ var introduce = function() {
 
 introduce();
 ```
+
+**Example 2**: context of arrow functions
+```js
+// Uncomment this code in case hello is an arrow function
+this.name = "Window"
+var aMan = {
+	name: 'Man',
+	hello: function() {
+		console.log('My name is ' + this.name);
+	}
+}
+aMan.hello();
+```
+
+### Pass variable by value and by reference
+- Pass by value means: after do somethings, the original variable won't be changed
+- Pass by reference means: after do somethings, the original variable will be changed
+**Example**
+```js
+var numberA = 10;
+var numberB = numberA;
+numberB = 20;
+console.log('Number A: '+ numberA + '; Number B: ' + numberB);
+
+var objA = {}
+var objB = objA;
+console.log('Object A: ' + JSON.stringify(objA));
+
+objB.name = 'The name';
+console.log('Object A: '+ JSON.stringify(objA) + '; Object B: ' + JSON.stringify(objB));
+
+// Try with objC = objB then modify objC
+```
+
+## var, let, const
+### Var variable
+- `var` is not block scoped
+- `var` can be redefined
+- Try with an example
+```js
+var greeter = "hey hi";
+var times = 4;
+
+if (times > 3) {
+    var greeter = "say Hello instead"; 
+}
+
+// Uncomment this code to see what will happen
+// var greeter = "TEST!"
+
+console.log(greeter)
+```
+
+### Let variable
+- `let` is block scoped
+- `let` can be updated but not re-declared
+
+### Const variable
+- `const` is block scoped
+- `const` **cannot** be updated or re-declared
+
+**Questions**
+1. which should we use?
+    > Answer: as small as possible
 
 ## Indexs
 - ***nodejs terminal <a name="nodejs-terminal">***
