@@ -123,6 +123,9 @@ console.log('Object A: '+ JSON.stringify(objA) + '; Object B: ' + JSON.stringify
 // Try with objC = objB then modify objC
 ```
 
+## Hoisting
+- The way execution contexts work. See more at [link](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+
 ## var, let, const
 ### Var variable
 - `var` is not block scoped
@@ -154,6 +157,17 @@ console.log(greeter)
 1. which should we use?
     > Answer: as small as possible
 **More details**: [link](https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e#:~:text=Hoisting%20of%20const&text=var%20declarations%20are%20globally%20scoped%20or%20function%20scoped%20while%20let,be%20updated%20nor%20re%2Ddeclared.)
+
+### Template literals (Template strings)
+- Template literals are string literals allowing embedded expressions.
+- Template literals are enclosed by the backtick (` `)  (grave accent) character instead of double or single quotes.
+**Example**:
+```js
+let a = 5;
+let b = 10;
+var str = `The sum is: ${a + b}`;
+console.log(str);
+```
 
 ## Indexs
 - ***nodejs terminal <a name="nodejs-terminal">***
