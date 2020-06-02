@@ -1,7 +1,14 @@
 # Javascript Studying
 For studying javascript
 
-## Data types
+## Tab of contents
+1. [Data types](#data-types)
+2. [Scope of a variable](#variable-scope)
+    1. [Context environment](#context-environment)
+    1. [Scope of a variable](#variable-scope-define)
+    1. [Pass variable by value and by reference](#pass-by)
+
+## Data types <a name="data-types">
 Two compare operator `==` for value comparing and `===` value and data type comparing.
 - There are six data types are primitives. To check some data type examples, go to ***[nodejs terminal](#nodejs-terminal)*** then check by `typeof`
     - *[undefined](https://developer.mozilla.org/en-US/docs/Glossary/Undefined)* : typeof instance === "undefined"
@@ -62,12 +69,12 @@ Two compare operator `==` for value comparing and `===` value and data type comp
 	map[symbol1] + map[symbol2]
     ```
 
-## Scope of a variable
-### Context environment
+## Scope of a variable <a name="variable-scope">
+### Execution Context <a name="context-environment">
 - Each function has it's context
 - See more at [link](https://towardsdatascience.com/javascript-context-this-keyword-9a78a19d5786)
 
-### Scope of a variable
+### Scope of a variable <a name="variable-scope-define">
 - There are two scope that a variable can be: global and local
 - Variables are defined outside functions are global scope. Variables are defined inside functions are local scope
 
@@ -103,7 +110,7 @@ var aMan = {
 aMan.hello();
 ```
 
-### Pass variable by value and by reference
+### Pass variable by value and by reference <a name="pass-by">
 - Pass by value means: after do somethings, the original variable won't be changed
 - Pass by reference means: after do somethings, the original variable will be changed
 **Example**
