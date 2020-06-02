@@ -20,6 +20,8 @@ Two compare operator `==` for value comparing and `===` value and data type comp
 	>
 	> 3 ways to access object's properties: *dot property accessor*, *brackets property accessor*, *destructuring* (just get)
 	>
+	> A function can be object's property
+	>
 	> Read more at [here](https://dmitripavlutin.com/access-object-properties-javascript/)
 
 - Data type examples <a name="datatype-examples">: Try with some javascript codes bellow
@@ -57,6 +59,34 @@ Two compare operator `==` for value comparing and `===` value and data type comp
 	map[symbol2] = 2; // doesn't override the previous symbol's value
 	map[symbol1] + map[symbol2]
     ```
+
+## Scope of a variable
+### Context environment
+- Each function has it's context
+- See more at [link](https://towardsdatascience.com/javascript-context-this-keyword-9a78a19d5786)
+
+### Scope of a variable
+- There are two scope that a variable can be: global and local
+- Variables are defined outside functions are global scope. Variables are defined inside functions are local scope
+
+Example 1: Context inside context
+```js
+var comeFrom = 'The earth'
+var introduce = function() {
+	var comeFrom = 'Viet Nam';
+	var hello = function(){
+		var comeFrom = 'Da Lat';
+		var say = function() {
+			console.log('I come from: ' + comeFrom);
+		}
+
+		say();
+	}
+	hello();
+}
+
+introduce();
+```
 
 ## Indexs
 - ***nodejs terminal <a name="nodejs-terminal">***
