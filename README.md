@@ -153,6 +153,7 @@ console.log(greeter)
 **Questions**
 1. which should we use?
     > Answer: as small as possible
+**More details**: [link](https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e#:~:text=Hoisting%20of%20const&text=var%20declarations%20are%20globally%20scoped%20or%20function%20scoped%20while%20let,be%20updated%20nor%20re%2Ddeclared.)
 
 ## Indexs
 - ***nodejs terminal <a name="nodejs-terminal">***
