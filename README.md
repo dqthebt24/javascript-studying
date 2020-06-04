@@ -7,6 +7,13 @@ For studying javascript
     1. [Context environment](#context-environment)
     1. [Scope of a variable](#variable-scope-define)
     1. [Pass variable by value and by reference](#pass-by)
+3. [Hoisting](#hoisting)
+4. [var, let, const](#var-let-const)
+    1. [Var variable](#var-let-const-var)
+    1. [Let variable](#var-let-const-let)
+    1. [Const variable](#var-let-const-const)
+5. [Template literals (Template strings)](#template-literals)
+6. [Indexs](#indexs)
 
 ## Data types <a name="data-types">
 Two compare operator `==` for value comparing and `===` value and data type comparing.
@@ -100,15 +107,37 @@ introduce();
 **Example 2**: context of arrow functions
 ```js
 // Uncomment this code in case hello is an arrow function
+/*this.name = "Window"
+var aMan = {
+    name: 'Man',
+    hello: () => {
+        console.log('My name is ' + this.name);
+    }
+}*/
+
+var aMan = {
+    name: 'Man',
+    hello: function() {
+        console.log('My name is ' + this.name);
+    }
+}
+
+aMan.hello();
+```
+
+**Example 3**: context of arrow functions in case callback
+```js
 this.name = "Window"
 var aMan = {
-	name: 'Man',
-	hello: function() {
-		console.log('My name is ' + this.name);
-	}
+    name: 'Man',
+    hello: function() {
+        console.log('My name is ' + this.name);
+        setTimeout(() => {console.log('Name after timeout is: ' + this.name)}, 1000)
+    }
 }
 aMan.hello();
 ```
+
 
 ### Pass variable by value and by reference <a name="pass-by">
 - Pass by value means: after do somethings, the original variable won't be changed
@@ -130,11 +159,11 @@ console.log('Object A: '+ JSON.stringify(objA) + '; Object B: ' + JSON.stringify
 // Try with objC = objB then modify objC
 ```
 
-## Hoisting
+## Hoisting <a name="hoisting">
 - The way execution contexts work. See more at [link](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
 
-## var, let, const
-### Var variable
+## var, let, const <a name="var-let-const">
+### Var variable <a name="var-let-const-var">
 - `var` is not block scoped
 - `var` can be redefined
 - Try with an example
@@ -152,11 +181,11 @@ if (times > 3) {
 console.log(greeter)
 ```
 
-### Let variable
+### Let variable <a name="var-let-const-let">
 - `let` is block scoped
 - `let` can be updated but not re-declared
 
-### Const variable
+### Const variable <a name="var-let-const-const">
 - `const` is block scoped
 - `const` **cannot** be updated or re-declared
 
@@ -165,9 +194,9 @@ console.log(greeter)
     > Answer: as small as possible
 **More details**: [link](https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e#:~:text=Hoisting%20of%20const&text=var%20declarations%20are%20globally%20scoped%20or%20function%20scoped%20while%20let,be%20updated%20nor%20re%2Ddeclared.)
 
-### Template literals (Template strings)
+## Template literals (Template strings) <a name="template-literals">
 - Template literals are string literals allowing embedded expressions.
-- Template literals are enclosed by the backtick (` `)  (grave accent) character instead of double or single quotes.
+- Template literals are enclosed by the backtick (\` \`)  (grave accent) character instead of double or single quotes.
 **Example**:
 ```js
 let a = 5;
@@ -176,6 +205,6 @@ var str = `The sum is: ${a + b}`;
 console.log(str);
 ```
 
-## Indexs
+## Indexs <a name="indexs">
 - ***nodejs terminal <a name="nodejs-terminal">***
     > Open terminal, then type `node`, after that try with some javascript commands.
