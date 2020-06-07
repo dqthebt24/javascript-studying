@@ -3,17 +3,18 @@ For studying javascript
 
 ## Tab of contents
 1. [Data types](#data-types)
-2. [Scope of a variable](#variable-scope)
+1. [Scope of a variable](#variable-scope)
     1. [Context environment](#context-environment)
     1. [Scope of a variable](#variable-scope-define)
     1. [Pass variable by value and by reference](#pass-by)
-3. [Hoisting](#hoisting)
-4. [var, let, const](#var-let-const)
+1. [Hoisting](#hoisting)
+1. [var, let, const](#var-let-const)
     1. [Var variable](#var-let-const-var)
     1. [Let variable](#var-let-const-let)
     1. [Const variable](#var-let-const-const)
-5. [Template literals (Template strings)](#template-literals)
-6. [Indexs](#indexs)
+1. [Template literals (Template strings)](#template-literals)
+1. [Default parameters](#default-parameters)
+1. [Indexs](#indexs)
 
 ## Data types <a name="data-types">
 Two compare operator `==` for value comparing and `===` value and data type comparing.
@@ -158,6 +159,8 @@ console.log('Object A: '+ JSON.stringify(objA) + '; Object B: ' + JSON.stringify
 
 // Try with objC = objB then modify objC
 ```
+**Questions**: 
+- How to clone an object? => Google
 
 ## Hoisting <a name="hoisting">
 - The way execution contexts work. See more at [link](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
@@ -204,6 +207,40 @@ let b = 10;
 var str = `The sum is: ${a + b}`;
 console.log(str);
 ```
+
+## Default parameters <a name="default-parameters">
+- Some ways to define default parameters
+**Example 1**:
+```js
+function sayHi(message='Hi') {
+    console.log(message);
+}
+sayHi(); // Hi
+// sayHi("Hi everyone!");
+```
+**Example 2**:
+```js
+function sayHi(message) {
+    message = typeof message !== 'undefined' ? message : 'Hi';
+    console.log(message);
+}
+sayHi(); // 'Hi'
+// sayHi("Hi everyone!");
+```
+**Example 3**:
+```js
+function add(x, y = 1, z = 2) {
+    console.log( arguments.length );
+    return x + y + z;
+}
+
+add(10); // 1
+add(10, 20); // 2
+add(10, 20, 30); // 3
+```
+- References:
+    - [Js Tutorial](https://www.javascripttutorial.net/es6/javascript-default-parameters/)
+    - [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
 ## Indexs <a name="indexs">
 - ***nodejs terminal <a name="nodejs-terminal">***
