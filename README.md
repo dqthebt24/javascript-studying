@@ -13,7 +13,9 @@ For studying javascript
     1. [Let variable](#var-let-const-let)
     1. [Const variable](#var-let-const-const)
 1. [Template literals (Template strings)](#template-literals)
-1. [Default parameters](#default-parameters)
+1. [Some advances](#some-advances)
+	1. [Default parameters](#default-parameters)
+	1. [Rest parameters](#rest-operator)
 1. [Indexs](#indexs)
 
 ## Data types <a name="data-types">
@@ -208,7 +210,9 @@ var str = `The sum is: ${a + b}`;
 console.log(str);
 ```
 
-## Default parameters <a name="default-parameters">
+## Some advances <a name="some-advances">
+### Default parameters <a name="default-parameters">
+- Target: We want a parameter of a function has a default value.
 - Some ways to define default parameters
 **Example 1**:
 ```js
@@ -238,6 +242,31 @@ add(10); // 1
 add(10, 20); // 2
 add(10, 20, 30); // 3
 ```
+
+### Rest parameters <a name="rest-operator">
+- Target: We want to get all parameters are passed in a function.
+- Try with code
+```js
+function sum(a, b){ 
+    return a + b; 
+}
+
+sum(1, 2);
+```
+- If we want to do `sum(1,2,3,4)`, we'll need [Rest operator in javascrip](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters). We do as the code bellow
+```js
+function sum(...numbers){
+    let sum = 0; 
+    for(let i of numbers){ 
+        sum+=i; 
+    } 
+    return sum;
+}
+sum(1,2,3);
+sum(1,2,3,4,5);
+```
+- Syntax of **rest**: `...<parameter-name>`
+
 - References:
     - [Js Tutorial](https://www.javascripttutorial.net/es6/javascript-default-parameters/)
     - [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
