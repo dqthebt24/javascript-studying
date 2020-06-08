@@ -324,7 +324,7 @@ second();
 
 ### Destructuring <a name="destructuring">
 - Extract a colection or object to another object
-- Search some example at [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- Search some example at [developer.mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) and [hacks.mozilla.org](https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/)
 **Example 1**:
 ```js
 var arr = [0, 1, 2];
