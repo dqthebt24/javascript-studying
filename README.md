@@ -242,6 +242,9 @@ add(10); // 1
 add(10, 20); // 2
 add(10, 20, 30); // 3
 ```
+- References:
+    - [Js Tutorial](https://www.javascripttutorial.net/es6/javascript-default-parameters/)
+    - [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
 ### Rest parameters <a name="rest-operator">
 - Target: We want to get all parameters are passed in a function.
@@ -267,9 +270,6 @@ sum(1,2,3,4,5);
 ```
 - Syntax of **rest**: `...<parameter-name>`
 
-- References:
-    - [Js Tutorial](https://www.javascripttutorial.net/es6/javascript-default-parameters/)
-    - [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
 ## Indexs <a name="indexs">
 - ***nodejs terminal <a name="nodejs-terminal">***
