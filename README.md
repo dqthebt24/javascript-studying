@@ -16,8 +16,9 @@ For studying javascript
 1. [Some advances](#some-advances)
 	1. [Default parameters](#default-parameters)
 	1. [Rest parameters](#rest-operator)
-	1. [Callback](#callback-header)
 	1. [Destructuring](#destructuring)
+    1. [Callback](#callback-header)
+    1. [Promise](#promise)
 1. [Indexs](#indexs)
 
 ## Data types <a name="data-types">
@@ -302,26 +303,6 @@ console.log(assignObj);
 ```
 - Syntax: `...<variable-name>`
 
-### Callback <a name="callback-header">
-- A function will be called later
-```js
-function first(){
-	console.log("Log function 1");
-  	// Simulate a code delay
-  	setTimeout( function(){
-    	console.log("Log function callback");
-  	}, 1000 );
-}
-function second(){
-  	console.log("Log function 2");
-}
-first();
-second();
-```
-- Use in real world: A function run after get data from server.
-
-### Promise
-
 ### Destructuring <a name="destructuring">
 - Extract a colection or object to another object
 - Search some example at [developer.mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) and [hacks.mozilla.org](https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/)
@@ -349,6 +330,26 @@ var obj = {name: 'name', age: 8, location: 'NY'}
 var {name, location} = obj;
 console.log(name, location);
 ```
+
+### Callback <a name="callback-header">
+- A function will be called later
+```js
+function first(){
+    console.log("Log function 1");
+    // Simulate a code delay
+    setTimeout( function(){
+        console.log("Log function callback");
+    }, 1000 );
+}
+function second(){
+    console.log("Log function 2");
+}
+first();
+second();
+```
+- Use in real world: A function run after get data from server.
+
+### Promise <a name="promise">
 
 ## Indexs <a name="indexs">
 - ***nodejs terminal <a name="nodejs-terminal">***
