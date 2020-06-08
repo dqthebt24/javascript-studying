@@ -16,6 +16,8 @@ For studying javascript
 1. [Some advances](#some-advances)
 	1. [Default parameters](#default-parameters)
 	1. [Rest parameters](#rest-operator)
+	1. [Callback](#callback-header)
+	1. [Destructuring](#destructuring)
 1. [Indexs](#indexs)
 
 ## Data types <a name="data-types">
@@ -270,6 +272,83 @@ sum(1,2,3,4,5);
 ```
 - Syntax of **rest**: `...<parameter-name>`
 
+### Spread operator
+- Same syntax as [rest operator](#) but the target is opposite.
+- Target: We want to get all element of a colection or an object
+- Try some code
+```js
+let arr1 = [1,2,3]; 
+let arr2 = [4,5]; 
+
+arr = [arr1, arr2]; 
+console.log(arr1); 
+
+// Get all element of arr1 and arr2
+arr = [...arr1,...arr2]; 
+console.log(arr); 
+
+// Spread object
+let obj = { foo: 1, bar: 1 };
+let newObj = { ...obj, baz: 1 };
+console.log(newObj);
+
+// The same in es5
+let obj = { foo: 1, bar: 1 };
+let newObj = { baz: 1 };
+let assignObj = Object.assign(newObj, source);
+console.log(newObj);
+console.log(assignObj);
+
+```
+- Syntax: `...<variable-name>`
+
+### Callback <a name="callback-header">
+- A function will be called later
+```js
+function first(){
+	console.log("Log function 1");
+  	// Simulate a code delay
+  	setTimeout( function(){
+    	console.log("Log function callback");
+  	}, 1000 );
+}
+function second(){
+  	console.log("Log function 2");
+}
+first();
+second();
+```
+- Use in real world: A function run after get data from server.
+
+### Promise
+
+### Destructuring <a name="destructuring">
+- Extract a colection or object to another object
+- Search some example at [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+**Example 1**:
+```js
+var arr = [0, 1, 2];
+
+var first = arr[0];
+var second = arr[1];
+var third = arr[2];
+
+var [first, second, third] = arr;
+console.log(first, second, third);
+
+var [begin, ,end] = arr;
+console.log(begin, end);
+
+var [begin,...end] = arr;
+console.log(begin, end);
+```
+
+**Example 2**: Destructure an object
+```js
+var obj = {name: 'name', age: 8, location: 'NY'}
+var {name, location} = obj;
+console.log(name, location);
+```
 
 ## Indexs <a name="indexs">
 - ***nodejs terminal <a name="nodejs-terminal">***
